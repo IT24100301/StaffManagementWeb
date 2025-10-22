@@ -212,6 +212,7 @@
     </div>
 
     <div class="form-body">
+      <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
       <form th:action="@{/admin/users/save}" method="post">
         <input type="hidden" name="userId" th:value="${user.userId}">
 
@@ -246,6 +247,7 @@
             Password must be at least 6 characters long and include both letters and numbers for security
           </div>
         </div>
+
 
         <!-- Password Update Field for Existing Users -->
         <div th:if="${user.userId != null}" class="mb-4">
@@ -309,12 +311,6 @@
 
     if (!username) {
       alert('Please enter a username for the user account');
-      e.preventDefault();
-      return;
-    }
-
-    if (username.length < 3) {
-      alert('Username must be at least 3 characters long');
       e.preventDefault();
       return;
     }
