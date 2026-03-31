@@ -97,9 +97,13 @@
             alert('Please choose a role first.');
             return;
         }
-        // redirect to the login page with role parameter
-        // e.g. /login?role=HR  (controller can pre-select or show role-specific UI)
-        const url = '/login' + '?role=' + encodeURIComponent(role);
+        let url;
+        if (role === 'HR') {
+            url = '/hr-dashboard';  // Direct to HR dashboard
+        } else {
+            // Handle other roles, e.g., for Admin:
+            url = (role === 'Admin') ? '/admin-dashboard' : '/login?role=' + encodeURIComponent(role);
+        }
         window.location.href = url;
     });
 </script>

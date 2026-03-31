@@ -1,0 +1,107 @@
+-- ROLES
+CREATE TABLE Roles (
+    role_id INT PRIMARY KEY IDENTITY(1,1),
+    role_name VARCHAR(50) NOT NULL
+);
+
+-- USERS
+CREATE TABLE Users (
+    user_id INT PRIMARY KEY IDENTITY(1,1),
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role_id INT NOT NULL,
+    FOREIGN KEY (role_id) REFERENCES Roles(role_id)
+);
+
+-- DEPARTMENTS
+CREATE TABLE Departments (
+    department_id INT PRIMARY KEY IDENTITY(1,1),
+    department_name VARCHAR(100) NOT NULL
+);
+
+-- EMPLOYEES
+CREATE TABLE Employees (
+    employee_id INT PRIMARY KEY IDENTITY(1,1),
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE,
+    phone VARCHAR(20),
+    hire_date DATE,
+    department_id INT,
+    user_id INT,
+    job_role VARCHAR(100), -- Added to store staff position/role (e.g., Lecturer, Manager)
+    FOREIGN KEY (department_id) REFERENCES Departments(department_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+-- ATTENDANCE
+CREATE TABLE Attendance (
+    attendance_id INT PRIMARY KEY IDENTITY(1,1),
+    employee_id INT NOT NULL,
+    date DATE NOT NULL,
+    status VARCHAR(20) CHECK (status IN ('Present', 'Absent')), -- Removed 'Leave' to avoid overlap with LeaveRequests
+    FOREIGN KEY (employee_id) REFERENCES Employees(employee_id)
+);
+
+-- LEAVE REQUESTS
+CREATE TABLE LeaveRequests (
+    leave_id INT PRIMARY KEY IDENTITY(1,1),
+    employee_id INT NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    reason VARCHAR(255),
+    status VARCHAR(20) DEFAULT 'Pending' CHECK (status IN ('Pending', 'Approved', 'Rejected')),
+    FOREIGN KEY (employee_id) REFERENCES Employees(employee_id)
+);
+
+-- PAYROLL
+CREATE TABLE Payroll (
+    payroll_id INT PRIMARY KEY IDENTITY(1,1),
+    employee_id INT NOT NULL,
+    salary DECIMAL(10,2) NOT NULL,
+    bonus DECIMAL(10,2) DEFAULT 0,
+    deductions DECIMAL(10,2) DEFAULT 0,
+    month_year VARCHAR(20) NOT NULL,
+    FOREIGN KEY (employee_id) REFERENCES Employees(employee_id)
+);
+
+---dummy data for the tables
+
+-- 1. Roles
+INSERT INTO Roles (role_name) VALUES
+('Admin'),
+('HR Manager'),
+('Staff');
+
+-- 2. Users
+INSERT INTO Users (username, password, role_id) VALUES
+('hr_manager1', 'hashed_password1', 2), -- HR Manager, user_id = 1
+('staff_user1', 'hashed_password2', 3), -- Staff, user_id = 2
+('admin_user1', 'hashed_password3', 1); -- Admin, user_id = 3
+
+-- 3. Departments
+INSERT INTO Departments (department_name) VALUES
+('IT'),
+('HR'),
+('Finance');
+
+-- 4. Employees
+INSERT INTO Employees (first_name, last_name, email, phone, hire_date, department_id, user_id, job_role) VALUES
+('Priya', 'Fernando', 'priya.fernando@slit.lk', '0771234567', '2024-03-15', 2, 1, 'HR Manager'), -- HR Manager
+('Nimal', 'Silva', 'nimal.silva@slit.lk', '0712345678', '2024-06-10', 1, 2, 'Software Engineer'), -- Staff
+('Sunil', 'Perera', 'sunil.perera@slit.lk', '0765432109', '2024-01-20', 3, 3, 'Finance Officer'); -- Admin-linked staff
+
+-- 5. Attendance
+INSERT INTO Attendance (employee_id, date, status) VALUES
+(1, '2025-09-27', 'Present'), -- HR Manager
+(1, '2025-09-28', 'Present'),
+(2, '2025-09-27', 'Present'), -- Staff
+(2, '2025-09-28', 'Absent');
+
+-- 6. LeaveRequests
+INSERT INTO LeaveRequests (employee_id, start_date, end_date, reason, status) VALUES
+(2, '2025-10-01', '2025-10-03', 'Medical leave', 'Pending'), -- Staff requesting leave
+(2, '2025-09-30', '2025-09-30', 'Personal reasons', 'Approved'), -- Previously approved
+(2, '2025-09-15', '2025-09-16', 'Family emergency', 'Rejected'); -- Previously rejected
+
+select * from Employees

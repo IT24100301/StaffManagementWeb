@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
+import org.example.staffmanagementweb.HR.dto.EmployeeDTO;
 
 import java.time.LocalDate;
 
@@ -37,4 +38,20 @@ public class LeaveRequest {
     public void setReason(String reason) { this.reason = reason; }
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+
+    public Long getLeaveId() {
+        return getId();
+    }
+
+    public String getLeaveType() {
+        return getLeaveType().toString();
+    }
+
+    public Object getAppliedDate() {
+        return getAppliedDate() != null ? getAppliedDate().toString() : null;
+    }
+
+    public EmployeeDTO getEmployee() {
+        return getEmployee() != null ? getEmployee() : null;
+    }
 }

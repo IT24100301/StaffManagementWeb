@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bff57d20-a41d-4535-b6f9-70de30581407" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/HR/edit-staff.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/controller/HrDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/controller/HrDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/controller/StaffController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/controller/StaffController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/entity/LeaveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/entity/LeaveRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/service/HrService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/service/HrService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/service/LeaveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/staffmanagementweb/HR/service/LeaveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/HR/add-staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/HR/add-staff.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/HR/hr-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/HR/hr-dashboard.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <branch-grouping />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Test" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "IT24100294"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/IT24100294/StaffManagementWeb.git",
+    "accountId": "3947d54f-6a95-43b9-bcf7-e7d87ca6fd15"
+  }
+}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="337TMu8FLjcQGTUCkrPpQU9X3uK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.StaffManagementWebApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.hr-dashboard.html.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.StaffManagementWebApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;IT24100294&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Virul Akbo/OneDrive - Sri Lanka Institute of Information Technology/Y2S1/SE/PG54/StaffManagementWeb&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="StaffManagementWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="StaffManagementWeb" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.staffmanagementweb.StaffManagementWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bff57d20-a41d-4535-b6f9-70de30581407" name="Changes" comment="" />
+      <created>1758667067639</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758667067639</updated>
+      <workItem from="1758667068518" duration="312000" />
+      <workItem from="1758732966719" duration="3776000" />
+      <workItem from="1758737023611" duration="1236000" />
+      <workItem from="1758776794443" duration="2008000" />
+      <workItem from="1758783724773" duration="2136000" />
+      <workItem from="1758860916699" duration="2122000" />
+      <workItem from="1758949947738" duration="1207000" />
+      <workItem from="1759050442844" duration="13598000" />
+      <workItem from="1759124519374" duration="697000" />
+      <workItem from="1759145485293" duration="2831000" />
+      <workItem from="1759178035616" duration="4739000" />
+      <workItem from="1759219162491" duration="1710000" />
+      <workItem from="1759226565706" duration="4202000" />
+      <workItem from="1759246301558" duration="2370000" />
+      <workItem from="1759303281742" duration="3156000" />
+      <workItem from="1759329042885" duration="1721000" />
+      <workItem from="1759331277449" duration="361000" />
+      <workItem from="1759332198493" duration="2287000" />
+      <workItem from="1759334515559" duration="3000" />
+      <workItem from="1759335376658" duration="936000" />
+      <workItem from="1760941127899" duration="820000" />
+      <workItem from="1761095917533" duration="2547000" />
+      <workItem from="1761116410130" duration="3471000" />
+      <workItem from="1761127020087" duration="445000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Test" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="jakarta.persistence.PersistenceException" package="jakarta.persistence" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

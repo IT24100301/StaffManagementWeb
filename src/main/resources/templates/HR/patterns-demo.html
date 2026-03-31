@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Patterns Demo - Staff Management</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .pattern-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .pattern-title { color: #2c3e50; font-size: 18px; font-weight: bold; }
+        .info-box { background-color: #f8f9fa; padding: 10px; margin: 10px 0; border-radius: 3px; }
+        .success { color: #28a745; }
+        .warning { color: #ffc107; }
+        .error { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>Design Patterns Implementation Demo</h1>
+    
+    <div class="pattern-section">
+        <div class="pattern-title">1. DTO (Data Transfer Object) Pattern</div>
+        <div class="info-box">
+            <p><strong>Purpose:</strong> Decouple internal entities from external interfaces</p>
+            <p><strong>Implementation:</strong> EmployeeDTO, LeaveRequestDTO, DashboardDTO</p>
+            <p><strong>Benefits:</strong> Improved security, reduced data transfer, better API design</p>
+        </div>
+        <p><a href="/hr-dashboard/api/employees-dto">View Employees as DTOs</a></p>
+        <p><a href="/hr-dashboard/api/dashboard-data">View Dashboard Data as DTO</a></p>
+    </div>
+
+    <div class="pattern-section">
+        <div class="pattern-title">2. Strategy Pattern</div>
+        <div class="info-box">
+            <p><strong>Purpose:</strong> Define different approval strategies for leave requests</p>
+            <p><strong>Implementation:</strong> LeaveApprovalStrategy interface with ManagerApprovalStrategy, HRApprovalStrategy, AdminApprovalStrategy</p>
+            <p><strong>Benefits:</strong> Flexible approval rules, easy to extend with new strategies</p>
+        </div>
+        <p><a href="/hr-dashboard/strategy-demo/approval-test">Test Approval Strategies</a></p>
+    </div>
+
+    <div class="pattern-section">
+        <div class="pattern-title">3. Observer Pattern</div>
+        <div class="info-box">
+            <p><strong>Purpose:</strong> Notify multiple components when employee events occur</p>
+            <p><strong>Implementation:</strong> EmployeeObserver interface with EmailNotificationObserver and AuditLogObserver</p>
+            <p><strong>Benefits:</strong> Decoupled event handling, extensible notification system</p>
+        </div>
+        <p><strong>Note:</strong> Observer pattern is automatically triggered when you add, update, or delete employees through the existing forms.</p>
+    </div>
+
+    <div class="pattern-section">
+        <div class="pattern-title">4. Singleton Pattern</div>
+        <div class="info-box">
+            <p><strong>Purpose:</strong> Ensure single instance of application configuration</p>
+            <p><strong>Implementation:</strong> ApplicationConfig class with synchronized getInstance() method</p>
+            <p><strong>Benefits:</strong> Shared configuration state, resource management, consistent settings</p>
+        </div>
+        <p><a href="/hr-dashboard/api/config-info">View Application Configuration</a></p>
+    </div>
+
+    <div class="pattern-section">
+        <div class="pattern-title">Integration Points</div>
+        <div class="info-box">
+            <p><strong>HrService:</strong> Integrated with Observer pattern for employee events</p>
+            <p><strong>LeaveService:</strong> Integrated with Strategy pattern for approval logic</p>
+            <p><strong>Controllers:</strong> Use DTOs for data transfer and Singleton for configuration</p>
+            <p><strong>DTOMapperService:</strong> Centralized conversion between entities and DTOs</p>
+        </div>
+    </div>
+
+    <div class="pattern-section">
+        <div class="pattern-title">Testing the Patterns</div>
+        <div class="info-box">
+            <p><strong>To test Observer Pattern:</strong></p>
+            <ul>
+                <li>Go to <a href="/hr-dashboard/staff/add">Add Staff</a> and create a new employee</li>
+                <li>Check console logs for observer notifications</li>
+                <li>Edit or delete an employee to see update/delete notifications</li>
+            </ul>
+            
+            <p><strong>To test Strategy Pattern:</strong></p>
+            <ul>
+                <li>Visit the <a href="/hr-dashboard/strategy-demo/approval-test">Strategy Demo</a> page</li>
+                <li>See how different user roles have different approval capabilities</li>
+            </ul>
+            
+            <p><strong>To test DTO Pattern:</strong></p>
+            <ul>
+                <li>Visit the <a href="/hr-dashboard/api/employees-dto">Employees DTO</a> page</li>
+                <li>See how entities are converted to DTOs for external consumption</li>
+            </ul>
+            
+            <p><strong>To test Singleton Pattern:</strong></p>
+            <ul>
+                <li>Visit the <a href="/hr-dashboard/api/config-info">Config Info</a> page</li>
+                <li>See application configuration managed by singleton</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="pattern-section">
+        <div class="pattern-title">Back to Main Dashboard</div>
+        <p><a href="/hr-dashboard">Return to HR Dashboard</a></p>
+    </div>
+</body>
+</html>

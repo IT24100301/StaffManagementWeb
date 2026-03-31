@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees DTO Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .info-box { background-color: #e7f3ff; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .back-link { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Employees as DTOs (Data Transfer Object Pattern)</h1>
+    
+    <div class="info-box">
+        <h3>DTO Pattern Benefits:</h3>
+        <ul>
+            <li><strong>Security:</strong> Only expose necessary fields to external consumers</li>
+            <li><strong>Performance:</strong> Reduce data transfer by excluding unnecessary fields</li>
+            <li><strong>Flexibility:</strong> Different DTOs for different use cases</li>
+            <li><strong>Maintainability:</strong> Changes to entities don't affect external APIs</li>
+        </ul>
+    </div>
+
+    <h2>Employee DTOs (Total: <span th:text="${totalCount}">0</span>)</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Department</th>
+                <th>Job Role</th>
+                <th>Username</th>
+                <th>Role</th>
+                <th>Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.employeeId}">1</td>
+                <td th:text="${employee.firstName + ' ' + employee.lastName}">John Doe</td>
+                <td th:text="${employee.email}">john@example.com</td>
+                <td th:text="${employee.phone}">123-456-7890</td>
+                <td th:text="${employee.departmentName ?: 'N/A'}">IT</td>
+                <td th:text="${employee.jobRole}">Developer</td>
+                <td th:text="${employee.username}">john.doe</td>
+                <td th:text="${employee.roleName}">Staff</td>
+                <td th:text="${employee.isActive ? 'Yes' : 'No'}">Yes</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="back-link">
+        <a href="/patterns-demo">← Back to Patterns Demo</a> | 
+        <a href="/hr-dashboard">← Back to HR Dashboard</a>
+    </div>
+</body>
+</html>

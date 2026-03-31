@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Staff</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4>Edit Staff Member</h4>
+        </div>
+        <div class="card-body">
+            <form th:action="@{/hr-dashboard/staff/update}" th:object="${employee}" method="post">
+            <!-- Hidden ID -->
+                <input type="hidden" th:field="*{employeeId}"/>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" th:field="*{firstName}" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" th:field="*{lastName}" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" th:field="*{email}" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" th:field="*{phone}" pattern="[0-9]{10}" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Hire Date</label>
+                        <input type="date" class="form-control" th:field="*{hireDate}" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Department</label>
+                        <select class="form-select" name="departmentId" required>
+                            <option value="">Select Department</option>
+                            <option th:each="dept : ${departments}"
+                                    th:value="${dept.departmentId}"
+                                    th:selected="${dept.departmentId == employee.department?.departmentId}"
+                                    th:text="${dept.departmentName}">
+                            </option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Job Role</label>
+                        <input type="text" class="form-control" th:field="*{jobRole}" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">User Account</label>
+                        <select class="form-select" name="userId">
+                            <option value="">None</option>
+                            <option th:each="usr : ${users}"
+                                    th:value="${usr.userId}"
+                                    th:selected="${usr.userId == employee.user?.userId}"
+                                    th:text="${usr.username}">
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <a th:href="@{/hr-dashboard}" class="btn btn-secondary me-2">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
